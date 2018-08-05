@@ -6,7 +6,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>spring-boot-dubbo-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>spring-boot-dubbo-server</name>
 	<description>Demo project for Spring Boot</description>
@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.4.RELEASE</version>
+		<version>1.5.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -142,9 +142,6 @@
 			<classifier>jdk15</classifier>
 		</dependency>
 		<!-- GSON End -->
-
-
-
 
 	</dependencies>
 

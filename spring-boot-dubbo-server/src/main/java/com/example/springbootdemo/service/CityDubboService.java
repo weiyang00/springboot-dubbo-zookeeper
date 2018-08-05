@@ -14,5 +14,5 @@ import com.example.springbootdemo.domain.City;
  */
 public interface CityDubboService {
 
-    City findCityByName(String cityName);
+    City findDubboCityByName(String cityName);
 }

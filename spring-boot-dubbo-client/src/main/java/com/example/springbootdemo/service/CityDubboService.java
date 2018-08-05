@@ -1,6 +1,5 @@
 package com.example.springbootdemo.service;
 
-
 import com.example.springbootdemo.domain.City;
 
 /**
@@ -15,5 +14,5 @@ import com.example.springbootdemo.domain.City;
  */
 public interface CityDubboService {
 
-    City findCityByName(String cityName);
+    City findDubboCityByName(String cityName);
 }
