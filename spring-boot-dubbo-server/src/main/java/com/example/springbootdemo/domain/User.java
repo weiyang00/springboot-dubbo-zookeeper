@@ -1,6 +1,7 @@
 package com.example.springbootdemo.domain;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 /**
  * 用户实体类
@@ -25,6 +26,12 @@ public class User implements Serializable{
     private String description;
 
     private City city;
+
+    private Timestamp addTime;
+
+    private Timestamp editTime;
+
+
 
     public City getCity() {
         return city;
@@ -56,5 +63,21 @@ public class User implements Serializable{
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Timestamp getAddTime() {
+        return addTime;
+    }
+
+    public void setAddTime(Timestamp addTime) {
+        this.addTime = addTime;
+    }
+
+    public Timestamp getEditTime() {
+        return editTime;
+    }
+
+    public void setEditTime(Timestamp editTime) {
+        this.editTime = editTime;
     }
 }
