@@ -34,7 +34,6 @@ public class CityServiceImpl implements CityService {
     @Autowired
     CityDao cityDao;
 
-
     @Override
     public UserAndCity findCityById() {
         City city = null;
@@ -45,10 +44,6 @@ public class CityServiceImpl implements CityService {
         long id = 1L;
 
         List<City> cities = cityDao.selectAll();
-
-        if (cities.size()!= 0)
-        city = cities.get(0);
-        else city = null;
 
         city = cityDao.selectByPrimaryKey(1L);
 
