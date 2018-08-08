@@ -1,5 +1,8 @@
 package com.example.springbootdemo.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
@@ -8,39 +11,54 @@ import java.sql.Timestamp;
  *
  * Created by bysocket on 07/02/2017.
  */
+@Table(name = "city")
 public class City implements Serializable {
 
     /**
      * 城市编号
      */
-    private Long id;
+
+    @Id
+    @Column(name = "id")
+    private long id;
 
     /**
      * 省份编号
      */
-    private Long provinceId;
+    @Column(name = "province_id")
+    private long provinceId;
 
     /**
      * 城市名称
      */
+    @Column(name = "city_name")
     private String cityName;
 
     /**
      * 描述
      */
+    @Column(name = "description")
     private String description;
 
+    @Column(name = "addTime")
     private Timestamp addTime;
 
+    @Column(name = "editTime")
     private Timestamp editTime;
 
 
-    public City(Long id, Long provinceId, String cityName, String description) {
+    public City(Long id, Long provinceId, String cityName, String description, Timestamp addTime, Timestamp editTime) {
         this.id = id;
         this.provinceId = provinceId;
         this.cityName = cityName;
         this.description = description;
+        this.addTime = addTime;
+        this.editTime = editTime;
     }
+
+    public City() {
+    }
+
 
 
     public Long getId() {

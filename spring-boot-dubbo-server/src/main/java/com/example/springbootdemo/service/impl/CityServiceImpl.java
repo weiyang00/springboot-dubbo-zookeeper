@@ -16,6 +16,7 @@ import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -30,13 +31,28 @@ public class CityServiceImpl implements CityService {
 
     @Reference(version = "1.0.0")
     UserService userService;
+    @Autowired
+    CityDao cityDao;
+
 
     @Override
     public UserAndCity findCityById() {
-        City city = new City(1L , 1L , "北京" , "鲁力奋斗");
-        User user = userService.findUserByName("普通用户");
+        City city = null;
+//        User user = userService.findUserByName("泥瓦匠");
+        User user = new User();
 
         UserAndCity userAndCity = new UserAndCity();
+        long id = 1L;
+
+        List<City> cities = cityDao.selectAll();
+
+        if (cities.size()!= 0)
+        city = cities.get(0);
+        else city = null;
+
+        city = cityDao.selectByPrimaryKey(1L);
+
+        System.out.println("共有多少城市 === "+ cities.size());
 
         userAndCity.setCity(city);
         userAndCity.setUser(user);

@@ -20,7 +20,6 @@ public class ClusterDataSourceConfig {
 
     // 精确到 mapper.cluster 目录，以便跟其他数据源隔离
     static final String PACKAGE = "com.example.springbootdemo.dao.cluster";
-    static final String MAPPER_LOCATION = "classpath:mapper/cluster/*.xml";
 
     @Value("${cluster.datasource.url}")
     private String url;
@@ -52,10 +51,8 @@ public class ClusterDataSourceConfig {
     @Bean(name = "clusterSqlSessionFactory")
     public SqlSessionFactory clusterSqlSessionFactory(@Qualifier("clusterDataSource") DataSource clusterDataSource)
             throws Exception {
-        final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
+        SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(clusterDataSource);
-        sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver()
-                .getResources(ClusterDataSourceConfig.MAPPER_LOCATION));
         return sessionFactory.getObject();
     }
 }
