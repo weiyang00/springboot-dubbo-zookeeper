@@ -29,13 +29,13 @@ public class CityServiceImpl implements CityService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CityServiceImpl.class);
 
-    @Reference(version = "1.0.0")
-    UserService userService;
+//    @Reference(version = "1.0.0")
+//    UserService userService;
     @Autowired
     CityDao cityDao;
 
     @Override
-    public UserAndCity findCityById() {
+    public UserAndCity findCityById(String name) {
         City city = null;
 //        User user = userService.findUserByName("泥瓦匠");
         User user = new User();

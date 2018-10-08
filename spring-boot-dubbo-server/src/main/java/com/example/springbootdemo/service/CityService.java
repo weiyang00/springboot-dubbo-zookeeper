@@ -16,6 +16,6 @@ public interface CityService {
      * @param id
      * @return
      */
-    UserAndCity findCityById();
+    UserAndCity findCityById(String name);
 
 }

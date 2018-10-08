@@ -26,7 +26,7 @@ public class UserRestController {
      * @param userName
      * @return
      */
-    @RequestMapping(value = "/api/user", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/user", method = RequestMethod.POST)
     public User findByName(@RequestParam(value = "userName", required = true) String userName) {
         return userService.findUserByName(userName);
     }
